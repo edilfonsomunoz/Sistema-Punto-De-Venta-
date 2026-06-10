@@ -38,13 +38,13 @@
 */
 
 // The following values will probably need to be changed.
-$db['default']['username'] = 'root';
-$db['default']['password'] = 'smxvdlrjNZOYTXEtAmBBSdsXoPHJcmoT';
-$db['default']['database'] = 'railway';
+// DB configuration via Environment Variables (for Railway) or fallback to local
+$db['default']['hostname'] = getenv('MYSQLHOST') ?: 'localhost';
+$db['default']['port'] = getenv('MYSQLPORT') ?: 3306;
+$db['default']['username'] = getenv('MYSQLUSER') ?: 'admin_mutltipos';
+$db['default']['password'] = getenv('MYSQLPASSWORD') ?: 'Is82ks16#';
+$db['default']['database'] = getenv('MYSQLDATABASE') ?: 'admin_mutltipos';
 
-// The following values can probably stay the same.
-$db['default']['hostname'] = 'acela.proxy.rlwy.net';
-$db['default']['port'] = 38317;
 $db['default']['dbdriver'] = 'mysqli'; //Updated to latest driver.
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = false;
