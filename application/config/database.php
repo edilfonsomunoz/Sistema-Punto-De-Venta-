@@ -38,12 +38,13 @@
 */
 
 // The following values will probably need to be changed.
-$db['default']['username'] = 'admin_mutltipos';
-$db['default']['password'] = 'Is82ks16#';
-$db['default']['database'] = 'admin_mutltipos';
+$db['default']['username'] = 'root';
+$db['default']['password'] = 'smxvdlrjNZOYTXEtAmBBSdsXoPHJcmoT';
+$db['default']['database'] = 'railway';
 
 // The following values can probably stay the same.
-$db['default']['hostname'] = 'localhost';
+$db['default']['hostname'] = 'acela.proxy.rlwy.net';
+$db['default']['port'] = 38317;
 $db['default']['dbdriver'] = 'mysqli'; //Updated to latest driver.
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = false;
