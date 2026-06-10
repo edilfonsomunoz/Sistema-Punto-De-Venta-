@@ -25,7 +25,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |
 $is_https = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https');
 $protocol = $is_https ? "https://" : "http://";
-$config['base_url'] = $protocol . (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : 'localhost') . '/';
+$host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : 'localhost';
+$script_path = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME']));
+if ($script_path === '/') {
+    $script_path = '';
+}
+$config['base_url'] = $protocol . $host . $script_path . '/';
 /*
 |--------------------------------------------------------------------------
 | Index File
